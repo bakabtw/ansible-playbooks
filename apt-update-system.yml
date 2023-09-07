@@ -11,11 +11,11 @@
       cache_valid_time: 86400 # 1 day
   
   - name: Git checkout
-    ansible.builtin.shell:
-      chdir: /opt/docker
-      cmd: git pull
-      register: output
-      changed_when: output.stdout.startswith("Already")
+    git:
+      repo: git@github.com:bakabtw/behemoth.payload.network.git
+      dest: /opt/docker
+      update: yes
+      version: main
 
   - name: Pull docker images
     community.docker.docker_compose:
