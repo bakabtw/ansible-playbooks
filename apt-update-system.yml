@@ -14,6 +14,7 @@
     ansible.builtin.command:
       chdir: /opt/docker
       cmd: git pull
+      changed_when: false
 
   - name: Pull docker images
     community.docker.docker_compose:
