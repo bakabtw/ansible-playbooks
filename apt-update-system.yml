@@ -12,7 +12,7 @@
   
   - name: Git checkout
     git:
-      repo: {{repo}}
+      repo: "{{repo}}"
       dest: /opt/docker
       accept_hostkey: yes
       update: yes
