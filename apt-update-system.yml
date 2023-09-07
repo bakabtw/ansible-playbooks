@@ -11,7 +11,7 @@
       cache_valid_time: 86400 # 1 day
   
   - name: Git checkout
-    ansible.builtin.command:
+    ansible.builtin.shell:
       chdir: /opt/docker
       cmd: git pull
       changed_when: false
