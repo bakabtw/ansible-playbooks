@@ -16,11 +16,9 @@
   #     cmd: git pull
 
   - name: Pull docker images
-    ansible.builtin.shell:
-      chdir: /opt/docker
-      cmd: docker-compose pull
-
-  - name: Run docker-compose up
-    ansible.builtin.shell:
-      chdir: /opt/docker
-      cmd: docker-compose up -d
+    community.docker.docker_compose:
+      project_src: /opt/docker/
+      pull: true
+      state: present
+      remove_orphans: true
+      register: output
