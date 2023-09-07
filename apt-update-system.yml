@@ -12,7 +12,7 @@
   
   - name: Git checkout
     git:
-      repo: git@github.com:bakabtw/behemoth.payload.network.git
+      repo: ssh://git@git.app.enelt.com:2222/bakabtw/server-conf.git
       dest: /opt/docker
       accept_hostkey: yes
       update: yes
