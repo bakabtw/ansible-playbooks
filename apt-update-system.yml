@@ -14,7 +14,8 @@
     ansible.builtin.shell:
       chdir: /opt/docker
       cmd: git pull
-      changed_when: False
+      register: output
+      changed_when: output.stdout.startswith("Already")
 
   - name: Pull docker images
     community.docker.docker_compose:
