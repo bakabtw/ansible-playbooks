@@ -9,3 +9,18 @@
       upgrade: yes
       update_cache: yes
       cache_valid_time: 86400 # 1 day
+  
+  - name: Git checkout
+    ansible.builtin.shell:
+      chdir: /opt/docker
+      cmd: git pull
+
+  - name: Pull docker images
+    ansible.builtin.shell:
+      chdir: /opt/docker
+      cmd: docker-compose pull
+
+  - name: Run docker-compose up
+    ansible.builtin.shell:
+      chdir: /opt/docker
+      cmd: docker-compose up -d
