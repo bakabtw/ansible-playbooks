@@ -14,6 +14,7 @@
     git:
       repo: git@github.com:bakabtw/behemoth.payload.network.git
       dest: /opt/docker
+      accept_hostkey: yes
       update: yes
       version: main
 
