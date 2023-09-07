@@ -21,4 +21,3 @@
       pull: true
       state: present
       remove_orphans: true
-      register: output
